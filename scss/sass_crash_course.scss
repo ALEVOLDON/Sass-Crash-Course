@@ -52,3 +52,95 @@ nav {
     background-color: $primary-color;
     color: white;
 }
+
+// Mixins & Functions
+
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+}
+
+.box {
+    @include transform(rotate(30deg));
+}
+
+// Inheritance 
+
+// This CSS will print because %message-shared is extended.
+
+%message-shared {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #333;
+}
+
+.message {
+    @extend %message-shared;
+}
+
+.success {
+    @extend %message-shared;
+    background-color: red;
+}
+
+.error {
+    @extend %message-shared;
+    border-color: red;
+}
+
+.warning {
+    @extend %message-shared;
+    background-color: yellow;
+}
+
+// Operators 
+
+.container {
+    width: 100%;
+}
+
+article[role="main"] {
+    float: left;
+    width: 600px / 960px * 100%;
+}
+
+aside[role="complementary"] {
+    float: right;
+    width: 300px / 960px * 100%;
+}
+
+// Conditionals 
+
+@mixin triangle($size, $color, $direction) {
+    height: 0;
+    width: 0;
+
+    background-color: transparent;
+    border-style: solid;
+    border-width: $size / 2;
+
+    @if $direction==up {
+        border-bottom-color: $color;
+    }
+
+    @else if $direction==right {
+        border-left-color: $color;
+    }
+
+    @else if $direction==down {
+        border-top-color: $color;
+    }
+
+    @else if $direction==left {
+        border-right-color: $color;
+    }
+
+    @else {
+        @error "Unknown direction #{$direction}.";
+    }
+}
+
+.next {
+    @include triangle(5px, black, right);
+}

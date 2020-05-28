@@ -17,3 +17,41 @@ nav a {
 .inverse {
   background-color: #333;
   color: white; }
+
+.box {
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg); }
+
+.message, .success, .error, .warning {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333; }
+
+.success {
+  background-color: red; }
+
+.error {
+  border-color: red; }
+
+.warning {
+  background-color: yellow; }
+
+.container {
+  width: 100%; }
+
+article[role="main"] {
+  float: left;
+  width: 62.5%; }
+
+aside[role="complementary"] {
+  float: right;
+  width: 31.25%; }
+
+.next {
+  height: 0;
+  width: 0;
+  background-color: transparent;
+  border-style: solid;
+  border-width: 2.5px;
+  border-left-color: black; }
