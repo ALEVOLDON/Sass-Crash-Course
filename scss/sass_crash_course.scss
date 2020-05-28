@@ -6,3 +6,19 @@
 // 4. Let,s you use features that do not exist in CSS
 // 5. Sass (.scss) files are compiled to regular CSS
 
+// --------------------------------------------------
+
+// Variables In CSS
+
+// 1. Prefixed with a "$"
+// 2. $primary-color: blue
+// 3. Easier to read and write than CSS custom properties
+
+$font-stack: Helvetica,
+sans-serif;
+$primary-color: #333;
+
+body {
+    font: 100% $font-stack;
+    color: $primary-color;
+}
