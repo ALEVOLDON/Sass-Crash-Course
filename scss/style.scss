@@ -20,16 +20,11 @@ img {
 
 a {
   text-decoration: none;
-  color: #fff;
-}
-
-&:hover {
-  color: $secondary-color;
 }
 
 .showcase {
   background-color: $primary-color;
-  color: #fff;
+  color: set-text-color($primary-color);
   height: 600px;
 
   nav {
@@ -46,24 +41,29 @@ a {
       padding: 15px;
     }
 
-    &-content {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    a {
+      color: set-text-color($primary-color);
+    }
 
-      img {
-        width: 50%;
-      }
+    a:hover {
+      color: $secondary-color;
+    }
+  }
 
-      h1 {
-        font-size: 50px;
-        line-height: 1.2;
-      }
+  &-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
 
-      p {
-        margin: 20px 0;
-      }
+    img {
+      width: 50%;
+    }
+
+    h1 {
+      font-size: 50px;
+      line-height: 1.2;
     }
   }
 }
